@@ -4,7 +4,7 @@ import UserPaymentJson from "../public/userPayment.json";
 import './index.css';
 
 const STREAM_ABI = UserPaymentJson.abi;
-const STREAM_ADDRESS = "0xa16E02E87b7454126E5E10d957A927A7F5B5d2be";
+const STREAM_ADDRESS = "0xB7A5bd0345EF1Cc5E66bf61BdeC17D2461fBd968";
 
 async function initProvider(): Promise<BrowserProvider | null> {
     if(window.ethereum) {
@@ -435,10 +435,10 @@ function StreamingApp() {
                     <button onClick={fetchUserInfo}>정보 조회</button>
                 </div>
                 <div>
-                    <p>사용자 주소: {userInfo.user || '없 음'}</p>
+                    <p>사용자 주소: {userInfo.user || '없음'}</p>
                     <p>누적 요금: {userInfo.charge !== 0n ? userInfo.charge.toString() : '0'} (단위: wei)</p>
-                    <p>마지막 시작 시간: {userInfo.time.lastStart !== 0n ? new Date(Number(userInfo.time.lastStart) * 1000).toLocaleString() : '없 음'}</p>
-                    <p>마지막 종료 시간: {userInfo.time.lastEnd !== 0n ? new Date(Number(userInfo.time.lastEnd) * 1000).toLocaleString() : '없 음'}</p>
+                    <p>마지막 시작 시간: {userInfo.time.lastStart !== 0n ? new Date(Number(userInfo.time.lastStart) * 1000).toLocaleString() : '없음'}</p>
+                    <p>마지막 종료 시간: {userInfo.time.lastEnd !== 0n ? new Date(Number(userInfo.time.lastEnd) * 1000).toLocaleString() : '없음'}</p>
                 </div>
             </div>
 

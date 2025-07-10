@@ -116,7 +116,7 @@
             require(amount >= 1e6, "Minimum 1 dollar");
             
             IERC20(usdc).safeTransferFrom(msg.sender, address(this), amount);
-            users[user].name = user;
+            users[user].user = user;
             users[user].charge += amount;
             totalBalance += amount;
         }
@@ -127,7 +127,7 @@
         function refund(address user, uint256 amount) public {
             require(msg.sender == user, "Check user");
             require(amount <= users[user].charge, "Insufficient balance");
-            require(users[user].time.lastStart < users[user.time.lastEnd], "On streaming");
+            require(users[user].time.lastStart < users[user].time.lastEnd, "On streaming");
 
             users[user].charge -= amount;
             totalBalance -= amount;      
